@@ -18,7 +18,7 @@ function Home() {
       {categories.map((category) => {
         return (
           <Categorycard
-            key={category.id}
+            id={category.id}
             name={category.name}
             image={category.image}
           />
@@ -29,7 +29,7 @@ function Home() {
       {bestsellers.map((best) => {
         return (
           <BestsellingCards
-            key={best.id}
+            id={best.id}
             category={best.category}
             name={best.name}
             image={best.image}

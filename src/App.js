@@ -19,7 +19,7 @@ function App() {
             />
             <Route
               exact
-              path="/singleProduct/:productID"
+              path="/singleProduct/:id"
               element={<SingleProduct />}
             />
           </Routes>

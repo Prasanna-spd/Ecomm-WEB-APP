@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import CategoryContext from "./contextReducer";
 
-function Categorycard({ key, name, image }) {
+function Categorycard({ id, name, image }) {
   const { updateSelectedCategory } = useContext(CategoryContext);
 
   return (

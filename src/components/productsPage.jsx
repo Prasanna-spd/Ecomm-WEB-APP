@@ -83,7 +83,7 @@ function ProductsPage() {
           {filteredProducts.map((item) => {
             return (
               <ProductCard
-                key={item.id}
+                id={item.id}
                 category={item.category}
                 theme={item.theme}
                 image={item.image}

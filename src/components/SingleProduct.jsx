@@ -5,20 +5,26 @@ import Navbar from "./Navbar";
 import Footer from "./footer";
 
 function SingleProduct() {
-  const { productId } = useParams();
+  const { id } = useParams();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const data = items.find((element) => element.id === productId);
-
+    const data = items.find((element) => element.id.toString() === id);
     setProduct(data);
-  }, [productId]);
+  }, [id]);
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <Navbar />
-      <div className="productImage"></div>
+      <div className="productImage">
+        <img src={product.image} alt="" />
+      </div>
       <div className="productDetails">
-        <h1>{product.theme} </h1>
+        <h1>{product.theme}</h1>
         <h5>Product Description</h5>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eos
@@ -36,13 +42,12 @@ function SingleProduct() {
           <li>ert</li>
           <li>iuy</li>
         </ul>
-        <h6>Color : Black</h6>
+        <h6>Color: Black</h6>
         <div className="buyMehod">
           <h5>{product.size}</h5>
           <div>{product.price}</div>
-          <div> Enter Location </div>
+          <div>Enter Location</div>
           <div>
-            {" "}
             <button>Buy Now</button>
             <button>Add to Cart</button>
           </div>
