@@ -4,25 +4,30 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./screens/Home";
 import PercategoryPage from "./screens/PercategoryPage";
 import SingleProduct from "./components/SingleProduct";
+import ScrollToTop from "./scrollToTop";
+import Pagination from "./components/pagination";
 
 function App() {
   return (
     <>
       <CategoryProvider>
         <Router>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route
-              exact
-              path="/percategoryPage"
-              element={<PercategoryPage />}
-            />
-            <Route
-              exact
-              path="/singleProduct/:id"
-              element={<SingleProduct />}
-            />
-          </Routes>
+          <ScrollToTop>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route
+                exact
+                path="/percategoryPage"
+                element={<PercategoryPage />}
+              />
+              <Route
+                exact
+                path="/singleProduct/:id"
+                element={<SingleProduct />}
+              />
+              <Route exact path="/pagination" element={<Pagination />} />
+            </Routes>
+          </ScrollToTop>
         </Router>
       </CategoryProvider>
     </>

@@ -3,6 +3,7 @@ import ProductCard from "./ProductCard";
 import products from "../assets/products";
 import CategoryContext from "./contextReducer";
 import { useContext } from "react";
+import PageNumbers from "./PageNumbers";
 
 function ProductsPage() {
   const { selectedCategory } = useContext(CategoryContext);
@@ -10,7 +11,15 @@ function ProductsPage() {
   const [selectedThemes, setSelectedThemes] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
-  // const [filtersApplied, setFiltersApplied] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(10);
+
+  const paginate = (pageNumber, event) => {
+    event.preventDefault();
+    setCurrentPage(pageNumber);
+  };
+  const endIndex = currentPage * productsPerPage;
+  const startIndex = endIndex - productsPerPage;
 
   const handleThemeChange = (theme) => {
     if (selectedThemes.includes(theme)) {
@@ -47,6 +56,8 @@ function ProductsPage() {
 
     return isCategoryMatch && isThemeMatch && isColorMatch && isSizeMatch;
   });
+
+  const displayData = filteredProducts.slice(startIndex, endIndex);
 
   return (
     <div>
@@ -157,7 +168,7 @@ function ProductsPage() {
             unde fugit dolor ipsum iste laudantium pariatur reprehenderit quod
             in, nemo rerum.
           </p>
-          {filteredProducts.map((item) => {
+          {displayData.map((item) => {
             return (
               <ProductCard
                 key={item.id}
@@ -174,6 +185,11 @@ function ProductsPage() {
           })}
         </div>
       </div>
+      <PageNumbers
+        filteredProducts={filteredProducts}
+        productsPerPage={productsPerPage}
+        paginate={paginate}
+      />
     </div>
   );
 }

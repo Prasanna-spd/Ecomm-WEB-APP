@@ -491,6 +491,26 @@ const products = [
     size: "XL",
     color: "White",
   },
+  {
+    id: 49,
+    image: "hoodie7.jpg",
+    category: "Hoodies",
+    theme: "Bollywood",
+    name: "Baburao (Hera Pheri)",
+    price: 249,
+    size: "XL",
+    color: "Red",
+  },
+  {
+    id: 50,
+    image: "hoodie7.jpg",
+    category: "Hoodies",
+    theme: "Bollywood",
+    name: "Chabir (Kabir Singh)",
+    price: 249,
+    size: "L",
+    color: "White",
+  },
 ];
 
 export default products;

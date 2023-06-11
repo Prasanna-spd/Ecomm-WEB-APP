@@ -9,6 +9,7 @@ function ProductCard({ id, image, category, name, price, size }) {
       onClick={() => navigate(`/singleProduct/${id}`)}
       style={{ cursor: "pointer" }}
     >
+      <p>{id}</p>
       <p> {category} </p>
       <img src={image} alt="" width={300} />
       <h3>{name} </h3>
