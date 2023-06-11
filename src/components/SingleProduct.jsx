@@ -24,7 +24,7 @@ function SingleProduct() {
         <img src={product.image} alt="" />
       </div>
       <div className="productDetails">
-        <h1>{product.theme}</h1>
+        <h1>{product.name}</h1>
         <h5>Product Description</h5>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eos
