@@ -6,6 +6,7 @@ import PercategoryPage from "./screens/PercategoryPage";
 import SingleProduct from "./components/SingleProduct";
 import ScrollToTop from "./scrollToTop";
 import Pagination from "./components/pagination";
+import MyCart from "./components/MyCart";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 element={<SingleProduct />}
               />
               <Route exact path="/pagination" element={<Pagination />} />
+              <Route exact path="/myCart" element={<MyCart />} />
             </Routes>
           </ScrollToTop>
         </Router>

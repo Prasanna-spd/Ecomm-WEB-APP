@@ -14,30 +14,45 @@ function Home() {
       <Navbar />
       <Carousel images={images} />
       <hr />
-      <h1>Collections</h1>
-      {categories.map((category) => {
-        return (
-          <Categorycard
-            id={category.id}
-            name={category.name}
-            image={category.image}
-          />
-        );
-      })}
+      <div class="d-flex justify-content-center fs-1 fw-bold">Collections</div>
+      <div class="container">
+        <div class="row row-cols-auto">
+          {categories.map((category) => {
+            return (
+              <div class="col mt-2">
+                <Categorycard
+                  id={category.id}
+                  name={category.name}
+                  image={category.image}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
       <hr />
-      <h1>Bestselling Products</h1>
-      {bestsellers.map((best) => {
-        return (
-          <BestsellingCards
-            id={best.id}
-            category={best.category}
-            name={best.name}
-            image={best.image}
-            price={best.price}
-          />
-        );
-      })}
-      <BestsellingCards />
+
+      <div class="d-flex justify-content-center fs-1 fw-bold">
+        Bestselling Products
+      </div>
+      <div class="container">
+        <div class="row row-cols-auto">
+          {bestsellers.map((best) => {
+            return (
+              <div class="col mt-2">
+                <BestsellingCards
+                  id={best.id}
+                  category={best.category}
+                  name={best.name}
+                  image={best.image}
+                  price={best.price}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
       <Footer />
     </div>
   );

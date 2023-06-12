@@ -62,48 +62,48 @@ function ProductsPage() {
   return (
     <div>
       <hr />
-      <div className="chooseFilter">
-        <div>
+      <div className="d-flex flex-row flex-sm-row">
+        <div className="chooseFilter  d-flex flex-column">
           <h1>Fliters</h1>
           <hr />
-          <div>
+          <div className="themes d-flex flex-column">
             <h3>Themes</h3>
-            <label>
+            <label className="filter-label">
               <input
                 type="checkbox"
                 onChange={() => handleThemeChange("Anime")}
               />
               Anime
             </label>
-            <label>
+            <label className="filter-label">
               <input
                 type="checkbox"
                 onChange={() => handleThemeChange("Coding")}
               />
               Coding
             </label>
-            <label>
+            <label className="filter-label">
               <input
                 type="checkbox"
                 onChange={() => handleThemeChange("Cities")}
               />
               Cities
             </label>
-            <label>
+            <label className="filter-label">
               <input
                 type="checkbox"
                 onChange={() => handleThemeChange("Hacking")}
               />
               Hacking
             </label>
-            <label>
+            <label className="filter-label">
               <input
                 type="checkbox"
                 onChange={() => handleThemeChange("Bollywood")}
               />
               Bollywood
             </label>
-            <label>
+            <label className="filter-label">
               <input
                 type="checkbox"
                 onChange={() => handleThemeChange("Hollywood")}
@@ -111,30 +111,30 @@ function ProductsPage() {
               Hollywood
             </label>
           </div>
-          <div>
+          <div className="colors d-flex flex-column">
             <h3>Colors</h3>
-            <label>
+            <label className="filter-label">
               <input
                 type="checkbox"
                 onChange={() => handleColorChange("Black")}
               />
               Black
             </label>
-            <label>
+            <label className="filter-label">
               <input
                 type="checkbox"
                 onChange={() => handleColorChange("Navy-Blue")}
               />
               Navy-Blue
             </label>
-            <label>
+            <label className="filter-label">
               <input
                 type="checkbox"
                 onChange={() => handleColorChange("Red")}
               />
               Red
             </label>
-            <label>
+            <label className="filter-label">
               <input
                 type="checkbox"
                 onChange={() => handleColorChange("White")}
@@ -142,47 +142,60 @@ function ProductsPage() {
               White
             </label>
           </div>
-          <div>
+          <div className="size d-flex flex-column">
             <h3>Size</h3>
-            <label>
+            <label className="filter-label">
               <input type="checkbox" onChange={() => handleSizeChange("S")} />S
             </label>
-            <label>
+            <label className="filter-label">
               <input type="checkbox" onChange={() => handleSizeChange("M")} />M
             </label>
-            <label>
+            <label className="filter-label">
               <input type="checkbox" onChange={() => handleSizeChange("L")} />L
             </label>
-            <label>
+            <label className="filter-label">
               <input type="checkbox" onChange={() => handleSizeChange("XL")} />
               XL
             </label>
           </div>
           {/* <button onClick={handleApplyFilters}>Apply filters</button> */}
         </div>
-        <div className="displayProducts">
-          <h1>Explore Our {selectedCategory} Collection</h1>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi
-            quisquam at itaque error nulla sunt accusantium possimus mollitia
-            unde fugit dolor ipsum iste laudantium pariatur reprehenderit quod
-            in, nemo rerum.
-          </p>
-          {displayData.map((item) => {
-            return (
-              <ProductCard
-                key={item.id}
-                id={item.id}
-                category={item.category}
-                theme={item.theme}
-                name={item.name}
-                color={item.color}
-                image={item.image}
-                price={item.price}
-                size={item.size}
-              />
-            );
-          })}
+        <div className="displayProducts d-flex flex-column ps-4">
+          <div className="container d-flex flex-column align-items-center justify-content-center">
+            <div>
+              <h1>Explore Our {selectedCategory} Collection</h1>
+            </div>
+            <div>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Commodi quisquam at itaque error nulla sunt accusantium possimus
+                mollitia unde fugit dolor ipsum iste laudantium pariatur
+                reprehenderit quod in, nemo rerum.
+              </p>
+            </div>
+          </div>
+
+          <div className="container">
+            <div className="row row-cols-3">
+              {displayData.map((item) => {
+                return (
+                  <div className="col mt-4">
+                    <ProductCard
+                      key={item.id}
+                      id={item.id}
+                      category={item.category}
+                      theme={item.theme}
+                      name={item.name}
+                      color={item.color}
+                      image={item.image}
+                      price={item.price}
+                      size={item.size}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
       <PageNumbers

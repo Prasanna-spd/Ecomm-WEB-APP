@@ -1,92 +1,80 @@
-import { React, useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import styled from "styled-components";
+import { React } from "react";
 
-const NavbarContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-`;
-
-const List = styled.ul`
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 10px;
-    display: ${(props) => (props.isOpen ? "flex" : "none")};
-  }
-`;
-const ListItem = styled.li`
-  margin-right: 10px;
-
-  @media (max-width: 768px) {
-    margin-right: 0;
-    margin-bottom: 5px;
-  }
-`;
-
-const SearchInput = styled.input`
-  margin-right: 10px;
-
-  @media (max-width: 768px) {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-`;
-
-const HamburgerButton = styled.button`
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin-right: 10px;
-
-  @media (max-width: 768px) {
-    display: block;
-  }
-`;
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  let navigate = useNavigate();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const handleClick = () => {
+    navigate("/myCart");
   };
 
   return (
-    <NavbarContainer>
-      <h1>Modify</h1>
-      <HamburgerButton onClick={toggleMenu}>
-        <RxHamburgerMenu />
-      </HamburgerButton>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <Link class="navbar-brand fs-1" to="/">
+            Modify
+          </Link>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item me-3">
+                <Link class="nav-link" aria-current="page" to="#">
+                  T-Shirts
+                </Link>
+              </li>
+              <li class="nav-item me-3">
+                <Link class="nav-link" to="#">
+                  Hoodies
+                </Link>
+              </li>
+              <li class="nav-item me-3">
+                <Link class="nav-link" to="#">
+                  Jeans
+                </Link>
+              </li>
+              <li class="nav-item me-3">
+                <Link class="nav-link" to="#">
+                  Caps
+                </Link>
+              </li>
+              <li class="nav-item me-3">
+                <Link class="nav-link" to="#">
+                  Jackets
+                </Link>
+              </li>
+            </ul>
 
-      <form action="">
-        <SearchInput type="text" name="Search" id="" placeholder="Search" />
-      </form>
-
-      <List isOpen={isMenuOpen}>
-        <ListItem>T-Shirts</ListItem>
-        <ListItem>Hoodies</ListItem>
-        <ListItem>Jeans</ListItem>
-        <ListItem>Caps</ListItem>
-        <ListItem>Jackets</ListItem>
-      </List>
-      <button>My Cart</button>
-      <button>Login</button>
-    </NavbarContainer>
+            <button class="btn btn-outline-success me-2" onClick={handleClick}>
+              My Cart
+            </button>
+            <button class="btn btn-outline-success ">Login</button>
+          </div>
+        </div>
+      </nav>
+    </div>
   );
 }
 
