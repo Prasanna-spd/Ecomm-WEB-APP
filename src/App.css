@@ -114,3 +114,12 @@
   /* position: absolute; */
   object-fit: cover;
 }
+.dark-theme {
+  background-color: #1d1c1c;
+  color: #fff;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

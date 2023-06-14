@@ -1,6 +1,7 @@
 import { React } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
+import Theme from "./theme";
 
 function Navbar() {
   let navigate = useNavigate();
@@ -11,7 +12,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
           <Link class="navbar-brand fs-1" to="/">
             Modify
@@ -71,6 +72,7 @@ function Navbar() {
               My Cart
             </button>
             <button class="btn btn-outline-success ">Login</button>
+            <Theme />
           </div>
         </div>
       </nav>

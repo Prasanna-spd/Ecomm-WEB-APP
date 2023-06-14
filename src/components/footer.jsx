@@ -3,37 +3,34 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div class="container-fluid mt-4 bg-gray-200 ">
+    <div class="footer container-fluid mt-4  ">
       <footer class="py-2">
-        <div class="row">
-          {/* <div className="col-6 col-md-2 mb-3">
-            <h2>Modify</h2>
-          </div> */}
-          <div class="col-6 col-md-2 mb-3">
+        <div class="row ">
+          <div class="col-6 col-md-2 mb-3 ">
             <h5>Shop</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 text-muted">
+                <Link to="#" class="nav-link p-0 ">
                   T-Shirts
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 text-muted">
+                <Link to="#" class="nav-link p-0 ">
                   SweatShirts
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 text-muted">
+                <Link to="#" class="nav-link p-0 ">
                   Hoodies
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 text-muted">
+                <Link to="#" class="nav-link p-0 ">
                   Jackets
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 text-muted">
+                <Link to="#" class="nav-link p-0 ">
                   Caps
                 </Link>
               </li>
@@ -44,17 +41,17 @@ function Footer() {
             <h5>Customer Service</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 text-muted">
+                <Link to="#" class="nav-link p-0 ">
                   Contact us
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 text-muted">
+                <Link to="#" class="nav-link p-0 ">
                   About us
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 text-muted">
+                <Link to="#" class="nav-link p-0 ">
                   Return Policy
                 </Link>
               </li>
@@ -65,12 +62,12 @@ function Footer() {
             <h5>Policy</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 text-muted">
+                <Link to="#" class="nav-link p-0 ">
                   Privacy Policy
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 text-muted">
+                <Link to="#" class="nav-link p-0 ">
                   Terms & Conditions
                 </Link>
               </li>
@@ -101,17 +98,6 @@ function Footer() {
 
         <div class="d-flex flex-column flex-sm-row justify-content-between">
           <p>&copy; 2022 Company, Inc. All rights reserved.</p>
-          {/* <ul class="list-unstyled d-flex">
-            <li class="ms-3">
-              <Link class="link-dark" to="#"></Link>
-            </li>
-            <li class="ms-3">
-              <Link class="link-dark" to="#"></Link>
-            </li>
-            <li class="ms-3">
-              <Link class="link-dark" to="#"></Link>
-            </li>
-          </ul> */}
         </div>
       </footer>
     </div>
