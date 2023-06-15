@@ -30,10 +30,11 @@ function SingleProduct() {
     });
   };
 
-  console.log(cartData);
   return (
     <div>
-      <Navbar />
+      <div className="navbaaar">
+        <Navbar />
+      </div>
       <div className="d-flex flex-row ">
         <div className="imageAngles" style={{ width: "10%" }}>
           <h1>Hello</h1>

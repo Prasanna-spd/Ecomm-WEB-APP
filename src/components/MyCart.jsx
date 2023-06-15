@@ -1,10 +1,13 @@
 import React from "react";
-
+import { useDispatchCart } from "./contextReducer";
 import { useCart } from "./contextReducer";
 
 function MyCart() {
   let data = useCart();
+  let dispatch = useDispatchCart();
   console.log(data);
+
+  let totalPrice = 0;
 
   if (data.length === 0) {
     return (
@@ -15,11 +18,17 @@ function MyCart() {
       </div>
     );
   }
+  data.forEach((clothes) => {
+    totalPrice += clothes.price;
+  });
 
+  const handleDelete = (index) => {
+    dispatch({ type: "REMOVE", index: index });
+  };
   return (
-    <div>
+    <div className="m-auto">
       <div>
-        <table className="table ">
+        <table className="orderCart table">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -30,16 +39,22 @@ function MyCart() {
             </tr>
           </thead>
 
-          <tbody className="text-dark">
-            {data.map((food, index) => (
+          <tbody className="orderCart">
+            {data.map((clothes, index) => (
               <tr>
                 <th scope="row">{index + 1}</th>
-                <td>{food.name}</td>
-                <td>{food.id}</td>
-                <td>{food.size}</td>
-                <td>{food.price}</td>
+                <td>{clothes.name}</td>
+                <td>{clothes.id}</td>
+                <td>{clothes.size}</td>
+                <td>{clothes.price}</td>
                 <td>
-                  <button type="button" className="btn btn-light p-0">
+                  <button
+                    type="button"
+                    className="btn btn-light p-0"
+                    onClick={() => {
+                      handleDelete(index);
+                    }}
+                  >
                     Delete
                   </button>
                 </td>
@@ -48,7 +63,7 @@ function MyCart() {
           </tbody>
         </table>
         <div>
-          <h3 className="fs-2">Total Price: /-</h3>
+          <h3 className="fs-2">Total Price:₹ {totalPrice} /-</h3>
         </div>
         <div>
           <button className="btn bg-success mt-5 ">Check Out</button>

@@ -19,6 +19,7 @@ const Theme = () => {
   useEffect(() => {
     const navbar = document.querySelector(".navbar");
     const footer = document.querySelector(".footer");
+    const orderCart = document.querySelector(".orderCart");
 
     const navlinks = navbar.getElementsByTagName("a");
     for (let i = 0; i < navlinks.length; i++) {
@@ -29,7 +30,10 @@ const Theme = () => {
     for (let i = 0; i < footlinks.length; i++) {
       footlinks[i].classList.toggle("text-light", isDarkTheme);
     }
-
+    if (orderCart) {
+      orderCart.classList.toggle("text-light", isDarkTheme);
+      orderCart.classList.toggle("text-dark", !isDarkTheme);
+    }
     document.body.classList.toggle("dark-theme", isDarkTheme);
     navbar.classList.toggle("bg-dark", isDarkTheme);
     navbar.classList.toggle("bg-light", !isDarkTheme);

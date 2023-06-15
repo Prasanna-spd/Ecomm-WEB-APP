@@ -1,18 +1,18 @@
 import React from "react";
-import ProductsPage from "../components/productsPage";
 import Navbar from "../components/Navbar";
+import MyCart from "../components/MyCart";
 import Footer from "../components/footer";
 
-function PercategoryPage() {
+function Mycartpage() {
   return (
     <div>
       <div className="navbaaar">
         <Navbar />
       </div>
-      <ProductsPage />
+      <MyCart />
       <Footer />
     </div>
   );
 }
 
-export default PercategoryPage;
+export default Mycartpage;

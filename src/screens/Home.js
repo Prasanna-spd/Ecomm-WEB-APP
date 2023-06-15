@@ -11,7 +11,9 @@ import Footer from "../components/footer";
 function Home() {
   return (
     <div>
-      <Navbar />
+      <div className="navbaaar">
+        <Navbar />
+      </div>
       <Carousel images={images} />
       <hr />
       <div class="d-flex justify-content-center fs-1 fw-bold">Collections</div>
