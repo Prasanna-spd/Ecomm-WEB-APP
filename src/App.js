@@ -7,6 +7,7 @@ import SingleProduct from "./components/SingleProduct";
 import ScrollToTop from "./scrollToTop";
 import Pagination from "./components/pagination";
 import Mycartpage from "./screens/mycartpage";
+import StatusPage from "./screens/statusPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               />
               <Route exact path="/pagination" element={<Pagination />} />
               <Route exact path="/myCart" element={<Mycartpage />} />
+              <Route exact path="/statusPage" element={<StatusPage />} />
             </Routes>
           </ScrollToTop>
         </Router>

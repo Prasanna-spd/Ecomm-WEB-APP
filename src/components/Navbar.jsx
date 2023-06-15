@@ -26,7 +26,14 @@ function Navbar() {
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button
+              class="btn btn-outline-success"
+              type="submit"
+              onClick={(e) => {
+                navigate("/statusPage");
+                e.preventDefault();
+              }}
+            >
               Search
             </button>
           </form>

@@ -1,8 +1,10 @@
 import React from "react";
 import { useDispatchCart } from "./contextReducer";
 import { useCart } from "./contextReducer";
+import { useNavigate } from "react-router-dom";
 
 function MyCart() {
+  const navigate = useNavigate();
   let data = useCart();
   let dispatch = useDispatchCart();
   console.log(data);
@@ -24,6 +26,10 @@ function MyCart() {
 
   const handleDelete = (index) => {
     dispatch({ type: "REMOVE", index: index });
+  };
+
+  const handleCheckout = () => {
+    navigate("/statusPage");
   };
   return (
     <div className="m-auto">
@@ -66,7 +72,14 @@ function MyCart() {
           <h3 className="fs-2">Total Price:₹ {totalPrice} /-</h3>
         </div>
         <div>
-          <button className="btn bg-success mt-5 ">Check Out</button>
+          <button
+            className="btn bg-success mt-5 "
+            onClick={() => {
+              handleCheckout();
+            }}
+          >
+            Check Out
+          </button>
         </div>
       </div>
     </div>
