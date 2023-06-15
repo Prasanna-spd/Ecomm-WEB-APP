@@ -1,10 +1,12 @@
 import { React } from "react";
-
 import { Link, useNavigate } from "react-router-dom";
 import Theme from "./theme";
+import { useCart } from "./contextReducer";
 
 function Navbar() {
   let navigate = useNavigate();
+
+  let data = useCart();
 
   const handleClick = () => {
     navigate("/myCart");
@@ -70,6 +72,18 @@ function Navbar() {
 
             <button class="btn btn-outline-success me-2" onClick={handleClick}>
               My Cart
+              <span
+                style={{
+                  verticalAlign: "super",
+                  margin: "5px",
+                  padding: "2px",
+                  backgroundColor: "white",
+                  borderRadius: "9px",
+                  color: "black",
+                }}
+              >
+                {data.length}
+              </span>
             </button>
             <button class="btn btn-outline-success ">Login</button>
             <Theme />
