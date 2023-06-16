@@ -18,10 +18,10 @@ function Home() {
       <hr />
       <div class="d-flex justify-content-center fs-1 fw-bold">Collections</div>
       <div class="container">
-        <div class="row row-cols-auto">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
           {categories.map((category) => {
             return (
-              <div class="col mt-2">
+              <div class="col col-md-6 mt-2">
                 <Categorycard
                   id={category.id}
                   name={category.name}
@@ -39,10 +39,10 @@ function Home() {
         Bestselling Products
       </div>
       <div class="container">
-        <div class="row row-cols-auto">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
           {bestsellers.map((best) => {
             return (
-              <div class="col mt-2">
+              <div class="col col-md-6 mt-2">
                 <BestsellingCards
                   id={best.id}
                   category={best.category}
