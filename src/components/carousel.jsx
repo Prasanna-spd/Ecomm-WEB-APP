@@ -4,17 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 function Carousel({ images }) {
   return (
-    // <div style={{ marginTop: "2rem" }}>
-    //   <div className="imgslider">
-    //     <Slider {...settings}>
-    //       {images.map((item) => (
-    //         <div key={item.id} className="carousel">
-    //           <img className="carousel-image" src={item.src} alt={item.alt} />
-    //         </div>
-    //       ))}
-    //     </Slider>
-    //   </div>
-    // </div>
     <div className="carousel-container">
       <div
         id="carouselExampleIndicators"
@@ -46,7 +35,11 @@ function Carousel({ images }) {
         <div className="carousel-inner">
           {images.map((item, index) => (
             <div className="carousel-item active" key={index}>
-              <img src={item.src} className="d-block w-100" alt={item.alt} />
+              <img
+                src={item.src}
+                className="carousel-image d-block "
+                alt={item.alt}
+              />
             </div>
           ))}
         </div>

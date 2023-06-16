@@ -36,7 +36,7 @@ function Categorycard({ id, name, image }) {
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <div
-        class="card  category"
+        class="card category"
         style={cardStyle}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
