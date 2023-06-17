@@ -8,6 +8,7 @@ import PageNumbers from "./PageNumbers";
 function ProductsPage() {
   const { selectedCategory } = useContext(CategoryContext);
 
+  const [showFilters, setShowFilters] = useState(true);
   const [selectedThemes, setSelectedThemes] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
@@ -62,105 +63,131 @@ function ProductsPage() {
   return (
     <div>
       <hr />
-      <div className="d-flex flex-row flex-sm-row">
-        <div className="chooseFilter  d-flex flex-column">
-          <h1>Fliters</h1>
-          <hr />
-          <div className="themes d-flex flex-column">
-            <h3>Themes</h3>
-            <label className="filter-label">
-              <input
-                type="checkbox"
-                onChange={() => handleThemeChange("Anime")}
-              />
-              Anime
-            </label>
-            <label className="filter-label">
-              <input
-                type="checkbox"
-                onChange={() => handleThemeChange("Coding")}
-              />
-              Coding
-            </label>
-            <label className="filter-label">
-              <input
-                type="checkbox"
-                onChange={() => handleThemeChange("Cities")}
-              />
-              Cities
-            </label>
-            <label className="filter-label">
-              <input
-                type="checkbox"
-                onChange={() => handleThemeChange("Hacking")}
-              />
-              Hacking
-            </label>
-            <label className="filter-label">
-              <input
-                type="checkbox"
-                onChange={() => handleThemeChange("Bollywood")}
-              />
-              Bollywood
-            </label>
-            <label className="filter-label">
-              <input
-                type="checkbox"
-                onChange={() => handleThemeChange("Hollywood")}
-              />
-              Hollywood
-            </label>
+      <div className="d-flex flex-row flex-sm-row product-page">
+        <button
+          className="toggle-filters-button"
+          onClick={() => setShowFilters(!showFilters)}
+        >
+          {showFilters ? "Hide Filters" : "Show Filters"}
+        </button>
+        {showFilters && (
+          <div
+            className={`chooseFilter  flex-column ${
+              showFilters ? "" : "filters-section"
+            }`}
+          >
+            <h1>Fliters</h1>
+
+            <hr />
+            <div className="themes d-flex flex-column">
+              <h3>Themes</h3>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleThemeChange("Anime")}
+                />
+                Anime
+              </label>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleThemeChange("Coding")}
+                />
+                Coding
+              </label>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleThemeChange("Cities")}
+                />
+                Cities
+              </label>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleThemeChange("Hacking")}
+                />
+                Hacking
+              </label>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleThemeChange("Bollywood")}
+                />
+                Bollywood
+              </label>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleThemeChange("Hollywood")}
+                />
+                Hollywood
+              </label>
+            </div>
+            <div className="colors d-flex flex-column">
+              <h3>Colors</h3>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleColorChange("Black")}
+                />
+                Black
+              </label>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleColorChange("Navy-Blue")}
+                />
+                Navy-Blue
+              </label>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleColorChange("Red")}
+                />
+                Red
+              </label>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleColorChange("White")}
+                />
+                White
+              </label>
+            </div>
+            <div className="size d-flex flex-column">
+              <h3>Size</h3>
+              <label className="filter-label">
+                <input type="checkbox" onChange={() => handleSizeChange("S")} />
+                S
+              </label>
+              <label className="filter-label">
+                <input type="checkbox" onChange={() => handleSizeChange("M")} />
+                M
+              </label>
+              <label className="filter-label">
+                <input type="checkbox" onChange={() => handleSizeChange("L")} />
+                L
+              </label>
+              <label className="filter-label">
+                <input
+                  type="checkbox"
+                  onChange={() => handleSizeChange("XL")}
+                />
+                XL
+              </label>
+            </div>
+            {/* {showFilters && (
+            <div className="filters-section">
+              
+            </div>
+          )} */}
+
+            {/* <button onClick={handleApplyFilters}>Apply filters</button> */}
           </div>
-          <div className="colors d-flex flex-column">
-            <h3>Colors</h3>
-            <label className="filter-label">
-              <input
-                type="checkbox"
-                onChange={() => handleColorChange("Black")}
-              />
-              Black
-            </label>
-            <label className="filter-label">
-              <input
-                type="checkbox"
-                onChange={() => handleColorChange("Navy-Blue")}
-              />
-              Navy-Blue
-            </label>
-            <label className="filter-label">
-              <input
-                type="checkbox"
-                onChange={() => handleColorChange("Red")}
-              />
-              Red
-            </label>
-            <label className="filter-label">
-              <input
-                type="checkbox"
-                onChange={() => handleColorChange("White")}
-              />
-              White
-            </label>
-          </div>
-          <div className="size d-flex flex-column">
-            <h3>Size</h3>
-            <label className="filter-label">
-              <input type="checkbox" onChange={() => handleSizeChange("S")} />S
-            </label>
-            <label className="filter-label">
-              <input type="checkbox" onChange={() => handleSizeChange("M")} />M
-            </label>
-            <label className="filter-label">
-              <input type="checkbox" onChange={() => handleSizeChange("L")} />L
-            </label>
-            <label className="filter-label">
-              <input type="checkbox" onChange={() => handleSizeChange("XL")} />
-              XL
-            </label>
-          </div>
-          {/* <button onClick={handleApplyFilters}>Apply filters</button> */}
-        </div>
-        <div className="displayProducts d-flex flex-column ps-4">
+        )}
+
+        <div className=" d-flex flex-column ps-4">
           <div className="container d-flex flex-column align-items-center justify-content-center">
             <div>
               <h1>Explore Our {selectedCategory} Collection</h1>
@@ -176,10 +203,10 @@ function ProductsPage() {
           </div>
 
           <div className="container">
-            <div className="row row-cols-3">
+            <div className=" displayProducts row row-cols-1 row-cols-md-2 row-cols-lg-3">
               {displayData.map((item) => {
                 return (
-                  <div className="col mt-4">
+                  <div className="col col-md-6 mt-2">
                     <ProductCard
                       key={item.id}
                       id={item.id}

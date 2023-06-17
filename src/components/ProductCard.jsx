@@ -15,7 +15,7 @@ function ProductCard({ id, image, category, name, price, size }) {
   };
 
   const cardStyle = {
-    width: "375px",
+    width: "100%",
     boxShadow: "lg",
     padding: "8px",
     borderRadius: "lg",
@@ -34,7 +34,7 @@ function ProductCard({ id, image, category, name, price, size }) {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <img src={image} alt="" width={300} />
+        <img src={image} alt="" width={"100%"} />
         <div class="card-body">
           <p> {category} </p>
           <h4 class="card-title">{name}</h4>

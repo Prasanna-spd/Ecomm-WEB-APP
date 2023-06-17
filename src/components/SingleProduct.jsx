@@ -35,7 +35,7 @@ function SingleProduct() {
       <div className="navbaaar">
         <Navbar />
       </div>
-      <div className="d-flex flex-row ">
+      <div className="d-flex flex-row single-product">
         <div className="imageAngles" style={{ width: "10%" }}>
           <h1>Hello</h1>
         </div>
@@ -79,27 +79,64 @@ function SingleProduct() {
           </div>
           <div>
             <h6 className="text-secondary">Color: Black</h6>
-            <button>Black</button>
-            <button>Red</button>
-            <button>White</button>
+            <button type="button" class="btn btn-dark  m-2">
+              Black
+            </button>
+            <button type="button" class="btn btn-danger m-2">
+              Red
+            </button>
+            <button type="button" class="btn btn-light m-2">
+              White
+            </button>
           </div>
 
           <div className="buyMehod">
             <div>
               <h5> SIZE : {product.size}</h5>
-              <button>S</button>
-              <button>M</button>
-              <button>L</button>
-              <button>XL</button>
+              <button type="button" class="btn btn-outline-success me-2">
+                S
+              </button>
+              <button type="button" class="btn btn-outline-success me-2">
+                M
+              </button>
+              <button type="button" class="btn btn-outline-success me-2">
+                L
+              </button>
+              <button type="button" class="btn btn-outline-success me-2">
+                XL
+              </button>
             </div>
 
             <hr />
             <div className="mt-4 mb-4">{product.price}</div>
 
-            <div>Enter Location</div>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control border border-success"
+                placeholder="PINCODE"
+                aria-label="Contumer's username"
+                aria-describedby="button-addon2"
+              />
+              <button
+                class="btn btn-outline-success"
+                type="button"
+                id="button-addon2"
+              >
+                Check
+              </button>
+            </div>
             <div>
-              <button>Buy Now</button>
-              <button onClick={handleAddtoCart}>Add to Cart</button>
+              <button type="button" class="btn btn-outline-success me-2">
+                BUY NOW
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-success me-2"
+                onClick={handleAddtoCart}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
           <div className="offers">
