@@ -53,6 +53,22 @@ function Navbar() {
               style={{ backgroundColor: "white" }}
             >
               <span class="navbar-toggler-icon"></span>
+              {data.length > 0 ? (
+                <span
+                  style={{
+                    verticalAlign: "super",
+                    margin: "5px",
+                    padding: "4px",
+                    backgroundColor: " RGB(25, 135, 84)",
+                    borderRadius: "20px",
+                    color: "black",
+                  }}
+                >
+                  {data.length}
+                </span>
+              ) : (
+                ""
+              )}
             </button>
           </div>
 
