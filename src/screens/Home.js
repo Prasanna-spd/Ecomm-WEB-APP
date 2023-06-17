@@ -16,7 +16,12 @@ function Home() {
       </div>
       <Carousel images={images} />
       <hr />
-      <div class="d-flex justify-content-center fs-1 fw-bold">Collections</div>
+      <div
+        class="d-flex justify-content-center fs-1 fw-bold"
+        style={{ width: "100%" }}
+      >
+        Collections
+      </div>
       <div class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
           {categories.map((category) => {

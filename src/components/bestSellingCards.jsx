@@ -12,7 +12,7 @@ function BestsellingCards({ category, name, image, price }) {
   };
 
   const cardStyle = {
-    width: "400px",
+    width: "100%",
     boxShadow: "lg",
     padding: "8px",
     borderRadius: "lg",

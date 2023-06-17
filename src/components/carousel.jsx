@@ -35,11 +35,7 @@ function Carousel({ images }) {
         <div className="carousel-inner">
           {images.map((item, index) => (
             <div className="carousel-item active" key={index}>
-              <img
-                src={item.src}
-                className="carousel-image d-block "
-                alt={item.alt}
-              />
+              <img src={item.src} className="d-block " alt={item.alt} />
             </div>
           ))}
         </div>
