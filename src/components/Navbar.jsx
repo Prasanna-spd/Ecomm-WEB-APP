@@ -21,7 +21,7 @@ function Navbar() {
         <div class="container-fluid ">
           <div className="navbar-heading-name">
             <Link class="navbar-brand fs-1" to="/">
-              Modify
+              Fusion-Closet
             </Link>
           </div>
           <div>
