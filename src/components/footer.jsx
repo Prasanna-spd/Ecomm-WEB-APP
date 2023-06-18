@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import CategoryContext from "./contextReducer";
+import { useContext } from "react";
 function Footer() {
+  const { updateSelectedCategory } = useContext(CategoryContext);
   return (
     <div class="container-fluid mt-4 footer">
       <footer class="py-2">
@@ -10,27 +12,57 @@ function Footer() {
             <h5>Shop</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 ">
+                <Link
+                  to="/percategoryPage"
+                  onClick={() => {
+                    updateSelectedCategory("T-Shirts");
+                  }}
+                  class="nav-link p-0 "
+                >
                   T-Shirts
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 ">
+                <Link
+                  to="/percategoryPage"
+                  onClick={() => {
+                    updateSelectedCategory("SweatShirts");
+                  }}
+                  class="nav-link p-0 "
+                >
                   SweatShirts
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 ">
+                <Link
+                  to="/percategoryPage"
+                  onClick={() => {
+                    updateSelectedCategory("Hoodies");
+                  }}
+                  class="nav-link p-0 "
+                >
                   Hoodies
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 ">
+                <Link
+                  to="/percategoryPage"
+                  onClick={() => {
+                    updateSelectedCategory("Jackets");
+                  }}
+                  class="nav-link p-0 "
+                >
                   Jackets
                 </Link>
               </li>
               <li class="nav-item mb-2">
-                <Link to="#" class="nav-link p-0 ">
+                <Link
+                  to="/percategoryPage"
+                  onClick={() => {
+                    updateSelectedCategory("Caps");
+                  }}
+                  class="nav-link p-0 "
+                >
                   Caps
                 </Link>
               </li>

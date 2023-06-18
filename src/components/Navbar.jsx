@@ -2,6 +2,8 @@ import { React } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Theme from "./theme";
 import { useCart } from "./contextReducer";
+import CategoryContext from "./contextReducer";
+import { useContext } from "react";
 
 function Navbar() {
   let navigate = useNavigate();
@@ -11,6 +13,7 @@ function Navbar() {
   const handleClick = () => {
     navigate("/myCart");
   };
+  const { updateSelectedCategory } = useContext(CategoryContext);
 
   return (
     <div>
@@ -75,27 +78,58 @@ function Navbar() {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item me-3">
-                <Link class="nav-link" aria-current="page" to="#">
+                <Link
+                  class="nav-link"
+                  aria-current="page"
+                  to="/percategoryPage"
+                  onClick={() => {
+                    updateSelectedCategory("T-Shirts");
+                  }}
+                >
                   T-Shirts
                 </Link>
               </li>
               <li class="nav-item me-3">
-                <Link class="nav-link" to="#">
+                <Link
+                  class="nav-link"
+                  to="/percategoryPage"
+                  onClick={() => {
+                    updateSelectedCategory("Hoodies");
+                  }}
+                >
                   Hoodies
                 </Link>
               </li>
               <li class="nav-item me-3">
-                <Link class="nav-link" to="#">
+                <Link
+                  class="nav-link"
+                  to="/percategoryPage"
+                  onClick={() => {
+                    updateSelectedCategory("Jeans");
+                  }}
+                >
                   Jeans
                 </Link>
               </li>
               <li class="nav-item me-3">
-                <Link class="nav-link" to="#">
+                <Link
+                  class="nav-link"
+                  to="/percategoryPage"
+                  onClick={() => {
+                    updateSelectedCategory("Caps");
+                  }}
+                >
                   Caps
                 </Link>
               </li>
               <li class="nav-item me-3">
-                <Link class="nav-link" to="#">
+                <Link
+                  class="nav-link"
+                  to="/percategoryPage"
+                  onClick={() => {
+                    updateSelectedCategory("Jackets");
+                  }}
+                >
                   Jackets
                 </Link>
               </li>
@@ -119,7 +153,14 @@ function Navbar() {
                 {data.length}
               </span>
             </button>
-            <button class="btn btn-outline-success ">Login</button>
+            <button
+              class="btn btn-outline-success "
+              onClick={() => {
+                navigate("/statusPage");
+              }}
+            >
+              Login
+            </button>
             <Theme />
           </div>
         </div>

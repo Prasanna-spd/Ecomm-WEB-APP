@@ -13,6 +13,7 @@ function BestsellingCards({ category, name, image, price }) {
 
   const cardStyle = {
     width: "100%",
+    height: "100%",
     boxShadow: "lg",
     padding: "8px",
     borderRadius: "lg",
@@ -28,7 +29,12 @@ function BestsellingCards({ category, name, image, price }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img class="card-img-top" src={image} alt="Cardimage" />
+      <img
+        class="card-img-top"
+        src={image}
+        alt="Cardimage"
+        style={{ height: "90%" }}
+      />
       <div class="card-body">
         <h4 class="card-title">{name}</h4>
         <p class="card-text">{category}</p>
