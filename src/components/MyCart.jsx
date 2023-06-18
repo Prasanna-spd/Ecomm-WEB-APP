@@ -33,8 +33,8 @@ function MyCart() {
   };
   return (
     <div className="m-auto">
-      <div>
-        <table className="orderCart table">
+      <div className="table-responsive">
+        <table className="orderCart table ">
           <thead>
             <tr>
               <th scope="col">#</th>
